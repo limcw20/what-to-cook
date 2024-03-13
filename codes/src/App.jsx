@@ -16,10 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate replace to="/main" />} />
         <Route path="main" element={<MainRecipe />} />
-        <Route path="mainrecipelist/" element={<MainRecipeList />} />
-        <Route path="random/" element={<Random />} />
-        <Route path="randomlist/" element={<RandomList />} />
-        <Route path="savedlist/" element={<SavedList />} />
+        <Route path="mainrecipelist" element={<MainRecipeList />} />
+        <Route path="random" element={<Random />} />
+        <Route path="randomlist" element={<RandomList />} />
+        <Route path="savedlist" element={<SavedList />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
 
         <Route path="*" element={<NotFound />} />
