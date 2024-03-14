@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import jsonData from "../Components/data.json";
+import RandomItem from "../Components/RandomItem";
 // import SaveButton from "../Components/SaveButton";
 
 const RandomList = () => {
@@ -40,15 +40,7 @@ const RandomList = () => {
         </button>
       </div>
 
-      <div>
-        {allRandomRecipeData.recipes?.map((recipe, index) => (
-          <div key={index}>
-            {recipe.image && <img src={recipe.image} alt={recipe.title} />}
-            <p>{recipe.id}</p>
-            <p>{recipe.title}</p>
-          </div>
-        ))}
-      </div>
+      <RandomItem allRandomRecipeData={allRandomRecipeData}></RandomItem>
 
       {/* <SaveButton></SaveButton> */}
     </div>

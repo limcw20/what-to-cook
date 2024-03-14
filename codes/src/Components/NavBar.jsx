@@ -15,8 +15,7 @@ const NavBar = () => {
               Main
             </NavLink>
           </li>
-          {/* "Link to" just navigate to link */}
-          {/* "NavLink to" returns something on the navbar*/}
+
           <li>
             <NavLink
               className={(navData) => (navData.isActive ? styles.active : "")}

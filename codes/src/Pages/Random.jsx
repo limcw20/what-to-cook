@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RandomList = () => {
+const Random = () => {
   return (
     <div>
       <h1>WHAT TO COOK?</h1>
       <button>
-        <Link to="/randomlist">Get Random Recipe</Link>
+        <Link to="/random">Get Random Recipe</Link>
       </button>
     </div>
   );
 };
 
-export default RandomList;
+export default Random;

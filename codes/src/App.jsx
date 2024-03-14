@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import MainRecipe from "./Pages/MainRecipe";
 import MainRecipeList from "./Pages/MainRecipeList";
-import Random from "./Pages/Random";
-import RandomList from "./Pages/RandomList";
+import Random from "./Pages/RandomList";
+import RandomList from "./Pages/Random";
 import SavedList from "./Pages/SavedList";
 import ShoppingList from "./Pages/ShoppingList";
 import NotFound from "./Pages/NotFound";
@@ -21,7 +21,6 @@ function App() {
         <Route path="randomlist" element={<RandomList />} />
         <Route path="savedlist" element={<SavedList />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
