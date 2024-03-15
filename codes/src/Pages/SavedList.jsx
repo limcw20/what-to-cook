@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const SavedList = () => {
-  const [thisdata, setThisData] = useState([]);
+  const [savedListData, setSavedListData] = useState([]);
   const getSaveDataToList = async () => {
     const res = await fetch(
       "https://api.airtable.com/v0/app4Z22yM5bIHZkkz/Table%202?maxRecords=20&view=Grid%20view",
@@ -15,7 +15,7 @@ const SavedList = () => {
     try {
       if (res.ok) {
         const data = await res.json();
-        setThisData(data.records);
+        setSavedListData(data.records);
       }
     } catch (error) {
       console.log(error.message);
@@ -31,7 +31,7 @@ const SavedList = () => {
       <h1>Saved List</h1>
       <br />
       <div>
-        {thisdata.map((item, index) => {
+        {savedListData.map((item, index) => {
           return (
             <div className="row">
               <div className="col-md-4" key={index}>

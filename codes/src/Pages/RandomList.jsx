@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import jsonData from "../Components/data.json";
 import RandomItem from "../Components/RandomItem";
-// import SaveButton from "../Components/SaveButton";
 
 const RandomList = () => {
   const [allRandomRecipeData, setAllRandomRecipeData] = useState(jsonData);
@@ -38,11 +37,8 @@ const RandomList = () => {
         <button className="col-md-3" onClick={getRandomRecipeData}>
           Get Random Recipe
         </button>
+        <RandomItem allRandomRecipeData={allRandomRecipeData}></RandomItem>
       </div>
-
-      <RandomItem allRandomRecipeData={allRandomRecipeData}></RandomItem>
-
-      {/* <SaveButton></SaveButton> */}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import SaveButton from "./SaveButton";
 
 const RandomItem = (props) => {
   return (
@@ -8,6 +9,7 @@ const RandomItem = (props) => {
           {recipe.image && <img src={recipe.image} alt={recipe.title} />}
           <p>{recipe.id}</p>
           <p>{recipe.title}</p>
+          <SaveButton recipeId={recipe.id}></SaveButton>
         </div>
       ))}
     </div>
