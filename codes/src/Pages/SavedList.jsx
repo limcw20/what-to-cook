@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import DeleteButton from "../Components/DeleteButton";
 
 const SavedList = () => {
   const [savedListData, setSavedListData] = useState([]);
@@ -40,7 +41,10 @@ const SavedList = () => {
               <div className="col-md-4" key={index}>
                 {item.fields.title}
               </div>
-              <button className="col-md-4">Delete</button>
+              <DeleteButton
+                getSaveDataToList={getSaveDataToList}
+                record_id={item.fields.record_id}
+              ></DeleteButton>
             </div>
           );
         })}
