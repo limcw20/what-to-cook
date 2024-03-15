@@ -15,11 +15,19 @@ const NavBar = () => {
               Main
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={(navData) => (navData.isActive ? styles.active : "")}
+              to="/randomlist"
+            >
+              Random
+            </NavLink>
+          </li>
 
           <li>
             <NavLink
               className={(navData) => (navData.isActive ? styles.active : "")}
-              to="/savedlist"
+              to="/mainlist"
             >
               List
             </NavLink>
