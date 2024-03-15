@@ -9,7 +9,10 @@ const RandomItem = (props) => {
           {recipe.image && <img src={recipe.image} alt={recipe.title} />}
           <p>{recipe.id}</p>
           <p>{recipe.title}</p>
-          <SaveButton recipeId={recipe.id}></SaveButton>
+          <SaveButton
+            recipeId={recipe.id}
+            recipeTitle={recipe.title}
+          ></SaveButton>
         </div>
       ))}
     </div>

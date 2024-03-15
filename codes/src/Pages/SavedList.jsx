@@ -38,9 +38,9 @@ const SavedList = () => {
                 {item.fields.food_id}
               </div>
               <div className="col-md-4" key={index}>
-                {item.fields.Title}
+                {item.fields.title}
               </div>
-              <button className="col-md-4">save</button>
+              <button className="col-md-4">Delete</button>
             </div>
           );
         })}
