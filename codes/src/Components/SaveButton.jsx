@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SaveButton = (props) => {
   const [saveRecipeToData, setSaveRecipeToData] = useState(null);
-
+  const airtableKey = import.meta.env.VITE_SERVER_AIRTABLE_KEY;
   const getSaveDataToList = async () => {
     const recipeIdAsInteger = parseInt(props.recipeId, 10);
     const recipeTitle = props.recipeTitle;
@@ -20,7 +20,7 @@ const SaveButton = (props) => {
         method: "POST",
 
         headers: {
-          Authorization: `Bearer pattoq1SWOXWroQa3.310dfb5dfdcdfbeb4aa3d3724e653f411c5c38a0f1fcd2a3c2676f0ae78d41eb `,
+          Authorization: `Bearer ${airtableKey} `,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

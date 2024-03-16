@@ -9,12 +9,14 @@ import SavedList from "./Pages/SavedList";
 import ShoppingList from "./Pages/ShoppingList";
 import NotFound from "./Pages/NotFound";
 import NavBar from "./Components/NavBar";
+import RecipeDetails from "./Pages/RecipeDetails";
+import RandomItem from "./Components/RandomItem";
 
 function App() {
-  const [saveData, setSaveData] = useState();
   return (
     <>
       <NavBar></NavBar>
+
       <Routes>
         <Route path="/" element={<Navigate replace to="/main" />} />
         <Route path="main" element={<MainRecipe />} />
@@ -23,6 +25,8 @@ function App() {
         <Route path="randomlist" element={<RandomList />} />
         <Route path="mainlist" element={<MainList />} />
         <Route path="savedlist" element={<SavedList />} />
+        <Route path="randomitem" element={<RandomItem />} />
+        <Route path="recipe/:id" element={<RecipeDetails />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

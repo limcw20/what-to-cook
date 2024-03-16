@@ -4,7 +4,7 @@ import RandomItem from "../Components/RandomItem";
 
 const RandomList = () => {
   const [allRandomRecipeData, setAllRandomRecipeData] = useState(jsonData);
-
+  const spoonacularKey = import.meta.env.VITE_SERVER_SPOONACULAR_KEY;
   const getRandomRecipeData = async () => {
     // try {
     //   const res = await fetch(
@@ -12,7 +12,7 @@ const RandomList = () => {
     //     {
     //       headers: {
     //         "Content-Type": "application/json",
-    //         "x-api-key": "ca166215ff724312b0e1f673d7501f25",
+    //         "x-api-key": `${spoonacularKey}`,
     //       },
     //     }
     //   );

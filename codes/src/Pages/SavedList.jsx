@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import DeleteButton from "../Components/DeleteButton";
 
 const SavedList = () => {
+  const airtableKey = import.meta.env.VITE_SERVER_AIRTABLE_KEY;
   const [savedListData, setSavedListData] = useState([]);
   const getSaveDataToList = async () => {
     const res = await fetch(
       "https://api.airtable.com/v0/app4Z22yM5bIHZkkz/Table%202?maxRecords=20&view=Grid%20view",
       {
         headers: {
-          Authorization: `Bearer pattoq1SWOXWroQa3.310dfb5dfdcdfbeb4aa3d3724e653f411c5c38a0f1fcd2a3c2676f0ae78d41eb `,
+          Authorization: `Bearer ${airtableKey}  `,
           "Content-Type": "application/json",
         },
       }
