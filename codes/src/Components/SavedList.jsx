@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DeleteButton from "../Components/DeleteButton";
+import DeleteButton from "./DeleteButton";
 
-const SavedList = () => {
+const SavedList = ({ active, onClick }) => {
   const airtableKey = import.meta.env.VITE_SERVER_AIRTABLE_KEY;
   const [savedListData, setSavedListData] = useState([]);
   const getSaveDataToList = async () => {
@@ -30,25 +30,30 @@ const SavedList = () => {
     <div>
       <br />
       <br />
-      <h1>Saved List</h1>
+
       <br />
       <div>
-        {savedListData.map((item, index) => {
-          return (
-            <div className="row">
-              <div className="col-md-4" key={index}>
-                {item.fields.food_id}
+        <button onClick={onClick}>
+          {active ? "Show Saved List" : "Show Saved List"}
+        </button>
+        {active && <h1>Saved List</h1>}
+        {active &&
+          savedListData.map((item, index) => {
+            return (
+              <div className="row">
+                <div className="col-md-4" key={index}>
+                  {item.fields.food_id}
+                </div>
+                <div className="col-md-4" key={index}>
+                  {item.fields.title}
+                </div>
+                <DeleteButton
+                  getSaveDataToList={getSaveDataToList}
+                  record_id={item.fields.record_id}
+                ></DeleteButton>
               </div>
-              <div className="col-md-4" key={index}>
-                {item.fields.title}
-              </div>
-              <DeleteButton
-                getSaveDataToList={getSaveDataToList}
-                record_id={item.fields.record_id}
-              ></DeleteButton>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );
