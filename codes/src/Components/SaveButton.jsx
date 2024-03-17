@@ -6,12 +6,20 @@ const SaveButton = (props) => {
   const getSaveDataToList = async () => {
     const recipeIdAsInteger = parseInt(props.recipeId, 10);
     const recipeTitle = props.recipeTitle;
+    const unitAmount = parseInt(props.unitAmount);
+    const unitMeasure = props.unitMeasure;
+    const ingredientName = props.ingredientName;
+    const ingredientUnit = props.ingredientUnit;
     console.log(recipeIdAsInteger);
     console.log(recipeTitle);
     console.log(
       JSON.stringify({
         food_id: recipeIdAsInteger,
         title: recipeTitle,
+        unitAmount: unitAmount,
+        unitMeasure: unitMeasure,
+        ingredientName: ingredientName,
+        ingredientUnit: ingredientUnit,
       })
     );
     const res = await fetch(
@@ -27,6 +35,10 @@ const SaveButton = (props) => {
           fields: {
             food_id: recipeIdAsInteger,
             title: recipeTitle,
+            unitAmount: unitAmount,
+            unitMeasure: unitMeasure,
+            ingredientName: ingredientName,
+            ingredientUnit: ingredientUnit,
           },
         }),
       }

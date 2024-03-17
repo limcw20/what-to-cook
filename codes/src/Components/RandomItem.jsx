@@ -11,10 +11,18 @@ const RandomItem = (props) => {
 
           <p>{recipe.id}</p>
           <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
+          {console.log(recipe.extendedIngredients[0].measures.metric.amount)}
+          {console.log(recipe.extendedIngredients[0].measures.metric.unitShort)}
+          {console.log(recipe.extendedIngredients[0].name)}
+          {console.log(recipe.extendedIngredients[0].unit)}
 
           <SaveButton
             recipeId={recipe.id}
             recipeTitle={recipe.title}
+            unitAmount={recipe.extendedIngredients[0].measures.metric.amount}
+            unitMeasure={
+              recipe.extendedIngredients[0].measures.metric.unitShort
+            }
           ></SaveButton>
         </div>
       ))}

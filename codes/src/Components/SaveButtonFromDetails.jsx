@@ -6,12 +6,17 @@ const SaveButtonFromDetails = (props) => {
   const getSaveDataToList = async () => {
     const recipeIdAsInteger = parseInt(props.recipeId, 10);
     const recipeTitle = props.recipeTitle;
+
     console.log(recipeIdAsInteger);
     console.log(recipeTitle);
     console.log(
       JSON.stringify({
         food_id: recipeIdAsInteger,
         title: recipeTitle,
+        unitAmount: unitAmount,
+        unitMeasure: unitMeasure,
+        ingredientName: ingredientName,
+        ingredientUnit: ingredientUnit,
       })
     );
 
@@ -28,6 +33,10 @@ const SaveButtonFromDetails = (props) => {
           fields: {
             food_id: recipeIdAsInteger,
             title: recipeTitle,
+            unitAmount: unitAmount,
+            unitMeasure: unitMeasure,
+            ingredientName: ingredientName,
+            ingredientUnit: ingredientUnit,
           },
         }),
       }

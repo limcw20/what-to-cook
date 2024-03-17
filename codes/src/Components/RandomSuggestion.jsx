@@ -1,46 +1,46 @@
 import React from "react";
 import SaveButton from "./SaveButton";
 import styles from "./RandomSuggestion.module.css";
+import { Link } from "react-router-dom";
 
 const RandomSuggestion = (props) => {
+  // Check if allRandomRecipeData exists and has recipes array
+  if (!props.allRandomRecipeData || !props.allRandomRecipeData.recipes) {
+    return <div>Loading...</div>; // or you can render some other loading indicator
+  }
+
   return (
     <div className="container">
       <div className="row">
         <div className={styles.position}>
-          {props.allRandomRecipeData.recipes?.map((recipe, index) => (
-            <div className={`col-md-3 ${styles.card}`}>
-              <div key={index}>
-                <div>
-                  {recipe.image && (
-                    <img
-                      src={recipe.image}
-                      alt={recipe.title}
-                      className="img-fluid"
-                    />
-                  )}
-                  <p>{recipe.id}</p>
-                  <p>{recipe.title}</p>
-                  <SaveButton
-                    recipeId={recipe.id}
-                    recipeTitle={recipe.title}
-                  ></SaveButton>
-                </div>
+          {props.allRandomRecipeData.recipes.map((recipe, index) => (
+            <div className={`col-md-3 ${styles.card}`} key={index}>
+              <div>
+                {recipe.image && (
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    className="img-fluid"
+                  />
+                )}
+                <p>{recipe.id}</p>
+                <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
+                <SaveButton
+                  recipeId={recipe.id}
+                  recipeTitle={recipe.title}
+                  unitAmount={
+                    recipe.extendedIngredients[0].measures.metric.amount
+                  }
+                  unitMeasure={
+                    recipe.extendedIngredients[0].measures.metric.unitShort
+                  }
+                  ingredientName={recipe.extendedIngredients[0].name}
+                  ingredientUnit={recipe.extendedIngredients[0].unit}
+                ></SaveButton>
               </div>
             </div>
           ))}
         </div>
-
-        {/* <div style={{ width: "18rem" }}>
-        <img variant="top" src="holder.js/100px180" />
-        <div className="Body">
-          <div className="Title">Card Title </div>
-          <div classname="text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </div>
-          <button variant="primary">Go somewhere</button>
-        </div>
-      </div> */}
       </div>
     </div>
   );
