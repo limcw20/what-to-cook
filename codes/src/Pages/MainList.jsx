@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import SavedList from "../Components/SavedList";
 import ShoppingList from "../Components/ShoppingList";
 
@@ -18,12 +18,6 @@ const MainList = () => {
   };
   return (
     <div>
-      <div>
-        <Link to="/savedlist">Go to saved list</Link>
-      </div>
-      <div>
-        <Link to="/shoppinglist">Go to shopping list</Link>
-      </div>
       <div>
         <SavedList
           active={savedListActive}
