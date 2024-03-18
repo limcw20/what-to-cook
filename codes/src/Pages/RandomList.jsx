@@ -8,7 +8,7 @@ const RandomList = () => {
   const getRandomRecipeData = async () => {
     // try {
     //   const res = await fetch(
-    //     "https://api.spoonacular.com/recipes/random?number=2",
+    //     "https://api.spoonacular.com/recipes/random?number=10",
     //     {
     //       headers: {
     //         "Content-Type": "application/json",

@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import SavedList from "../Components/SavedList";
-import ShoppingList from "../Components/ShoppingList";
+
+import MealPlanner from "../Components/MealPlanner";
 
 const MainList = () => {
   const [savedListActive, setSavedListActive] = useState(true);
-  const [shoppingListActive, setShoppingListActive] = useState(false);
-  const [shoppingListItems, setShoppingListItems] = useState([]);
+  const [mealListActive, setMealListActive] = useState(false);
+  // const [mealListItems, setMealListItems] = useState([]);
 
-  const updateShoppingList = (newItem) => {
-    setShoppingListItems((prevItems) => [...prevItems, newItem]);
+  const updateMealPlanner = (newItem) => {
+    setMealListItems((prevItems) => [...prevItems, newItem]);
   };
 
   const handleSavedListClick = () => {
     setSavedListActive(true);
-    setShoppingListActive(false);
+    setMealListActive(false);
   };
 
-  const handleShoppingListClick = () => {
+  const handleMealListClick = () => {
     setSavedListActive(false);
-    setShoppingListActive(true);
+    setMealListActive(true);
   };
 
   return (
@@ -27,12 +28,12 @@ const MainList = () => {
         <SavedList
           active={savedListActive}
           onClick={handleSavedListClick}
-          updateShoppingList={updateShoppingList}
+          updateMealPlanner={updateMealPlanner}
         />
-        <ShoppingList
-          active={shoppingListActive}
-          onClick={handleShoppingListClick}
-          items={shoppingListItems}
+        <MealPlanner
+          active={mealListActive}
+          onClick={handleMealListClick}
+          // items={mealListItems}
         />
       </div>
     </div>

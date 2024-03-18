@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SaveButton from "../Components/SaveButton";
-import SaveButtonFromDetails from "../Components/SaveButtonFromDetails";
 
 function RecipeDetails() {
   const { id } = useParams();
@@ -75,7 +74,6 @@ function RecipeDetails() {
       <SaveButton
         recipeId={selectedRecipeData.id}
         recipeTitle={selectedRecipeData.title}
-        recipeName={selectedRecipeData.extendedingredients}
       ></SaveButton>
     </div>
   );
