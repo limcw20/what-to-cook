@@ -33,14 +33,13 @@ const AddButton = (props) => {
           fields: {
             food_id: recipeId,
             title: recipeTitle,
-            // record_id: recordId,
           },
         }),
       }
     );
     if (res.ok) {
       const data = await res.json();
-      // setAddRecipeToData(data.fields);
+
       getSaveDataToList(data);
     }
   };
@@ -50,11 +49,16 @@ const AddButton = (props) => {
     getSaveDataToList();
   }, []);
   return (
-    <div>
-      <button className="col-md-4" onClick={getAddDataToList}>
+    <div className="flex flex-col items-center justify-start">
+      <button
+        onClick={getAddDataToList}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
         Add
       </button>
-      {addRecipeToData && <p>Recipe saved successfully!</p>}
+      {addRecipeToData && (
+        <p className="mt-4 text-green-500">Recipe saved successfully!</p>
+      )}
     </div>
   );
 };

@@ -37,32 +37,45 @@ function RecipeDetails() {
     return <div>Loading...</div>;
   }
 
+  const cleanedInstructions = selectedRecipeData.instructions.replace(
+    /<ol>|<\/ol>|<li>|<\/li>/g,
+    ""
+  );
+
   return (
-    <div>
-      <h1>{selectedRecipeData.title}</h1>
-      <img src={selectedRecipeData.image} alt={selectedRecipeData.title} />
-      <div>
-        <h3>ingredients</h3>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold text-center mb-8 border-b-2 border-primary">
+        {selectedRecipeData.title}
+      </h1>
+      <img
+        src={selectedRecipeData.image}
+        alt={selectedRecipeData.title}
+        className="w-full h-64 object-cover rounded-md mb-8"
+      />
+      <div className="bg-white shadow-md rounded-md p-6">
+        <h3 className="text-2xl font-semibold mb-4 border-b-2 border-secondary">
+          Ingredients
+        </h3>
         {selectedRecipeData.extendedIngredients &&
           selectedRecipeData.extendedIngredients.map((ingredient, index) => (
-            <div key={index}>
+            <div key={index} className="mb-2">
               <p>
-                {ingredient.amount} {""}
-                {ingredient.unit} of {""}
-                {ingredient.name}
+                {ingredient.amount} {ingredient.unit} of {ingredient.name}
               </p>
             </div>
           ))}
       </div>
-      <div>
-        <h3>Instructions</h3>
-        <p>{selectedRecipeData.instructions}</p>
+      <div className="bg-white shadow-md rounded-md p-6 mt-8">
+        <h3 className="text-2xl font-semibold mb-4 border-b-2 border-danger">
+          Instructions
+        </h3>
+        <p className="mb-4">{cleanedInstructions}</p>
         {selectedRecipeData.analyzedInstructions &&
           selectedRecipeData.analyzedInstructions.map((instruction, index) => (
             <div key={index}>
-              <h3>Steps</h3>
+              <h3 className="text-xl font-semibold mb-2">Steps</h3>
               {instruction.steps.map((step, stepIndex) => (
-                <div key={stepIndex}>
+                <div key={stepIndex} className="mb-1">
                   <p>
                     Step {step.number}: {step.step}
                   </p>
@@ -71,10 +84,13 @@ function RecipeDetails() {
             </div>
           ))}
       </div>
+      <br />
+      <br />
       <SaveButton
         recipeId={selectedRecipeData.id}
         recipeTitle={selectedRecipeData.title}
-      ></SaveButton>
+        className="mt-8"
+      />
     </div>
   );
 }

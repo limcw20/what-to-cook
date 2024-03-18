@@ -17,7 +17,10 @@ const MealDeleteButton = (props) => {
     );
   };
   return (
-    <button className="col-md-4" onClick={deleteSavedData}>
+    <button
+      onClick={deleteSavedData}
+      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+    >
       Delete
     </button>
   );

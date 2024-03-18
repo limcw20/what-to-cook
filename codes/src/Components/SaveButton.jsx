@@ -39,11 +39,16 @@ const SaveButton = (props) => {
   };
 
   return (
-    <div>
-      <button className="col-md-4" onClick={getSaveDataToList}>
+    <div className="flex flex-col items-center justify-center">
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={getSaveDataToList}
+      >
         Save
       </button>
-      {saveRecipeToData && <p>Recipe saved successfully!</p>}
+      {saveRecipeToData && (
+        <p className="text-green-500">Recipe saved successfully!</p>
+      )}
     </div>
   );
 };

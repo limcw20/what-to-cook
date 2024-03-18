@@ -33,16 +33,21 @@ const Random = () => {
   }, []);
 
   return (
-    <div>
-      <h1>WHAT TO COOK?</h1>
-      <button>
-        <Link to="/random">Get Random Recipe</Link>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold text-center mb-8">WHAT TO COOK?</h1>
+      <h3 className="text-xl text-center text-gray-600 mb-8">
+        Don't know what to cook? Don't worry, here are some suggestions for you!
+      </h3>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={getRandomRecipeData}
+      >
+        <Link to="/random" className="text-white">
+          Get Random Recipe
+        </Link>
       </button>
-      <RandomSuggestion
-        allRandomRecipeData={allRandomRecipeData}
-      ></RandomSuggestion>
+      <RandomSuggestion allRandomRecipeData={allRandomRecipeData} />
     </div>
   );
 };
-
 export default Random;
