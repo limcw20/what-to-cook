@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MealDeleteButton from "./MealDeleteButton";
+import AddNoteButton from "./AddNoteButton";
 
 const MealPlanner = ({ active, onClick, getSaveDataToList }) => {
   const airtableKey = import.meta.env.VITE_SERVER_AIRTABLE_KEY;
@@ -43,6 +44,10 @@ const MealPlanner = ({ active, onClick, getSaveDataToList }) => {
               mealData.map((item, index) => (
                 <div key={index}>
                   <div>{item.fields?.title}</div>
+                  <AddNoteButton
+                    note={item.fields.note}
+                    record_id={item.fields.record_id}
+                  ></AddNoteButton>
                   <MealDeleteButton
                     getSaveDataToList={getSaveDataToList}
                     record_id={item.fields.record_id}
