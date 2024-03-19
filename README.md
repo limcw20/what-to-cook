@@ -2,7 +2,7 @@
 ## Feeling inspired to cook but don't know what to cook? We got you covered!
 
 ### Getting Started
-##### Click here for the app: (url)
+##### [Click here to try out the app](limcw20-what-to-cook.netlify.app)
 
 ### Technologies Used
 ##### React.js
