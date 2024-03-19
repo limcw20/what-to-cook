@@ -3,6 +3,7 @@
 
 ### Getting Started
 ##### [Click here to try out the app](limcw20-what-to-cook.netlify.app)
+##### Update: something wrong with the deployment
 
 ### Technologies Used
 ##### React.js
