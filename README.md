@@ -6,6 +6,10 @@
 ##### [Click here to try out the app](limcw20-what-to-cook.netlify.app)
 ##### Update: something wrong with the deployment
 
+
+### Wireframe
+![alt text](https://trello.com/1/cards/65f8f4146580ae665ec6b37e/attachments/65f8f4812c4d2df6b15bf6b4/previews/65f8f4822c4d2df6b15bf704/download/image.png)
+
 ### Technologies Used
 ##### - React.js
 ##### - Tailwind CSS
