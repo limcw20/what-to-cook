@@ -44,7 +44,7 @@ function RecipeDetails() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8 border-b-2 border-primary">
+      <h1 className="text-4xl font-bold text-center mb-8 border-b-2 border-secondary">
         {selectedRecipeData.title}
       </h1>
       <img
