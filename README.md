@@ -5,8 +5,8 @@
 ### Click here for the app: (url)
 
 ## Technologies Used
-### React.js
-### Tailwind CSS
+#### React.js
+#### Tailwind CSS
 
 ## Screenshots
 ###
