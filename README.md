@@ -1,5 +1,11 @@
 # What To Cook?
-## Feeling inspired to cook but don't know what to cook? We got you covered!
+##### Feeling inspired to cook but don't know what to cook? We got you covered!
+
+### Features
+##### Recipe Query Search
+##### Random Recipe Suggestions
+##### Saved/Favourites List
+##### Meal Planner with Note-taking
 
 
 ### Technologies Used
