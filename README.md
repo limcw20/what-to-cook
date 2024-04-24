@@ -1,26 +1,26 @@
 # What To Cook?
 ##### Feeling inspired to cook but don't know what to cook? We got you covered!
 
-### Features
-##### Recipe Query Search
-##### Random Recipe Suggestions
-##### Saved/Favourites List
-##### Meal Planner with Note-taking
+## Features
+- Recipe Query Search
+- Random Recipe Suggestions
+- Saved/Favourites List
+- Meal Planner with Note-taking
 
 
-### Technologies Used
-##### - React.js
-##### - Airtable
-##### - Docker
-##### - Tailwind CSS
+## Technologies Used
+- React.js
+- Airtable
+- Docker
+- Tailwind CSS
 
 
-### Wireframe
+## Wireframe
 ![alt text](https://trello.com/1/cards/65f8f4146580ae665ec6b37e/attachments/65f8f4812c4d2df6b15bf6b4/previews/65f8f4822c4d2df6b15bf704/download/image.png)
 
 
 
-### Screenshots
+## Screenshots
 
 ##### Main Page - Search Page
 ![alt text](https://github.com/limcw20/what-to-cook/blob/main/screenshots/Main-Page.png?raw=true)
